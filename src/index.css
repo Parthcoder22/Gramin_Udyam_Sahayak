@@ -1,0 +1,262 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    background-color: #F8FAFB;
+    color: #191C1D;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display, .font-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  body {
+    background-color: white !important;
+    padding-bottom: 0 !important;
+    font-size: 11pt;
+    color: #000;
+  }
+
+  /* Hide everything except DPR */
+  header, footer, .no-print, #inputs-panel, #main-header, #app-footer,
+  #loan-application-modal, #help-guidelines-modal, #toast-notification {
+    display: none !important;
+  }
+
+  main {
+    display: none !important;
+  }
+
+  /* Show DPR container */
+  .dpr-container {
+    display: block !important;
+    width: 100%;
+  }
+
+  .print-break-inside-avoid {
+    break-inside: avoid;
+  }
+
+  /* DPR Page Structure */
+  .dpr-page {
+    page-break-after: always;
+    padding: 10mm 0;
+  }
+  .dpr-page:last-child {
+    page-break-after: avoid;
+  }
+
+  /* Cover Page */
+  .dpr-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 85vh;
+    text-align: center;
+  }
+  .dpr-cover-header {
+    padding-top: 60px;
+  }
+  .dpr-cover-govt {
+    font-size: 14pt;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #185E20;
+  }
+  .dpr-cover-ministry {
+    font-size: 11pt;
+    font-weight: 600;
+    color: #41493E;
+    margin-top: 4px;
+  }
+  .dpr-hr {
+    border: none;
+    border-top: 2px solid #185E20;
+    width: 60%;
+    margin: 20px auto;
+  }
+  .dpr-cover-title {
+    font-size: 22pt;
+    font-weight: 800;
+    color: #191C1D;
+    margin-top: 30px;
+    letter-spacing: 2px;
+  }
+  .dpr-cover-subtitle {
+    font-size: 11pt;
+    color: #4C616C;
+    margin-top: 8px;
+  }
+  .dpr-cover-body {
+    margin-top: 40px;
+  }
+  .dpr-cover-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  .dpr-cover-table td {
+    padding: 8px 16px;
+    font-size: 11pt;
+  }
+  .dpr-cover-table td:first-child {
+    font-weight: 700;
+    color: #41493E;
+    width: 200px;
+  }
+  .dpr-cover-table td:last-child {
+    color: #191C1D;
+  }
+  .dpr-cover-footer {
+    margin-top: 40px;
+    padding-bottom: 30px;
+  }
+  .dpr-cover-footer p {
+    font-size: 9pt;
+    color: #4C616C;
+    margin-top: 4px;
+  }
+  .dpr-disclaimer {
+    font-size: 8pt !important;
+    color: #71787D !important;
+    margin-top: 8px !important;
+  }
+
+  /* Section Titles */
+  .dpr-section-title {
+    font-size: 14pt;
+    font-weight: 800;
+    color: #185E20;
+    border-bottom: 2px solid #185E20;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+  }
+  .dpr-subsection {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #191C1D;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  /* Tables */
+  .dpr-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 12px;
+    font-size: 10pt;
+  }
+  .dpr-table th,
+  .dpr-table td {
+    border: 1px solid #999;
+    padding: 6px 10px;
+    text-align: left;
+  }
+  .dpr-table th {
+    background-color: #f0f0f0;
+    font-weight: 700;
+    font-size: 9pt;
+    text-transform: uppercase;
+  }
+  .dpr-label {
+    font-weight: 700;
+    color: #41493E;
+    width: 40%;
+  }
+  .dpr-value {
+    color: #191C1D;
+  }
+  .dpr-value-bold {
+    font-weight: 800;
+    color: #185E20;
+  }
+
+  /* SWOT Table */
+  .dpr-swot-table th {
+    width: 50%;
+    text-align: center;
+  }
+  .dpr-swot-table ul {
+    margin: 0;
+    padding-left: 16px;
+  }
+  .dpr-swot-table li {
+    margin-bottom: 2px;
+  }
+
+  /* Repayment Table */
+  .dpr-repayment-table td,
+  .dpr-repayment-table th {
+    text-align: right;
+    font-size: 9pt;
+    padding: 4px 8px;
+  }
+  .dpr-repayment-table td:first-child,
+  .dpr-repayment-table th:first-child,
+  .dpr-repayment-table td:nth-child(2),
+  .dpr-repayment-table th:nth-child(2) {
+    text-align: left;
+  }
+  .dpr-moratorium-row {
+    background-color: #FFF8E1;
+  }
+
+  /* Lists */
+  .dpr-list {
+    padding-left: 20px;
+    font-size: 10pt;
+    line-height: 1.6;
+  }
+  .dpr-list li {
+    margin-bottom: 4px;
+  }
+
+  /* Notes */
+  .dpr-note {
+    font-size: 9pt;
+    color: #4C616C;
+    font-style: italic;
+    margin: 8px 0;
+    line-height: 1.5;
+  }
+
+  /* Declaration */
+  .dpr-declaration {
+    border: 1px solid #999;
+    padding: 16px;
+    margin: 12px 0;
+    font-size: 10pt;
+    line-height: 1.6;
+  }
+  .dpr-signature-block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  .dpr-sig-line {
+    margin-bottom: 4px;
+  }
+
+  /* Footer Note */
+  .dpr-footer-note {
+    margin-top: 30px;
+    padding-top: 12px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    font-size: 8pt;
+    color: #71787D;
+  }
+  .dpr-footer-note p {
+    margin: 2px 0;
+  }
+}
+

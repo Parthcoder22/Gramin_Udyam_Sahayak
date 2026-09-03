@@ -1,0 +1,26 @@
+{
+  "name": "Gramin Udyam Sahayak",
+  "short_name": "GUS Portal",
+  "description": "Government Concessional Credit & Advisory Portal for Rural Micro-Entrepreneurs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAFB",
+  "theme_color": "#185E20",
+  "orientation": "portrait-primary",
+  "lang": "en-IN",
+  "categories": ["finance", "government", "business"],
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

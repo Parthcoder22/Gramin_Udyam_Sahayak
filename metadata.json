@@ -1,0 +1,6 @@
+{
+  "name": "Gramin Udyam Sahayak",
+  "description": "Government Concessional Credit & Advisory Portal for Rural Entrepreneurs",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
