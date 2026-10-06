@@ -170,8 +170,9 @@ const CATEGORY_DATA: Record<string, CategoryAdvisory> = {
   },
 };
 
-// Backend API base URL (proxied by Vite in dev)
-const API_BASE = '/api';
+// Backend API base URL (supports VITE_API_URL on Vercel or /api via Vite proxy locally)
+const rawBase = import.meta.env.VITE_API_URL ? String(import.meta.env.VITE_API_URL).trim().replace(/\/$/, '') : '';
+const API_BASE = rawBase ? `${rawBase}/api` : '/api';
 
 export default function App() {
   // 1. Core State Variables
